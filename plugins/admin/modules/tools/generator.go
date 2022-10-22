@@ -375,7 +375,7 @@ func InsertPermissionOfTable(conn db.Connection, table string) {
 }
 
 func InsertPermissionInfoDB(conn db.Connection, name, slug, httpMethod, httpPath string) {
-	checkExist, err := db.WithDriver(conn).Table("github.com/svyatoch/himera_permissions").
+	checkExist, err := db.WithDriver(conn).Table("himera_permissions").
 		Where("slug", "=", slug).
 		First()
 
@@ -387,7 +387,7 @@ func InsertPermissionInfoDB(conn db.Connection, name, slug, httpMethod, httpPath
 		return
 	}
 
-	_, err = db.WithDriver(conn).Table("github.com/svyatoch/himera_permissions").
+	_, err = db.WithDriver(conn).Table("himera_permissions").
 		Insert(dialect.H{
 			"name":        name,
 			"slug":        slug,

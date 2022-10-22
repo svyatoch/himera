@@ -544,7 +544,7 @@ func (sql *SQL) Exec() (int64, error) {
 	return res.LastInsertId()
 }
 
-const postgresInsertCheckTableName = "github.com/svyatoch/himera_menus|github.com/svyatoch/himera_permissions|github.com/svyatoch/himera_roles|github.com/svyatoch/himera_users"
+const postgresInsertCheckTableName = "himera_menus|himera_permissions|himera_roles|himera_users"
 
 // Insert exec the insert method of given key/value pairs.
 func (sql *SQL) Insert(values dialect.H) (int64, error) {

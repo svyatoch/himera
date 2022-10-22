@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS "github.com/svyatoch/himera_sites" (
+CREATE TABLE IF NOT EXISTS "himera_sites" (
 `id` integer PRIMARY KEY autoincrement,
 `key` CHAR(100) COLLATE NOCASE NOT NULL,
 `value` text COLLATE NOCASE NOT NULL,

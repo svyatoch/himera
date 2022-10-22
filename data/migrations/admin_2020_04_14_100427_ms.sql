@@ -1,4 +1,4 @@
-CREATE TABLE[github.com/svyatoch/himera_sites] (
+CREATE TABLE[himera_sites] (
  [id] int   identity(1,1) ,
  [key] varchar(100)   NOT NULL,
  [value] text   NOT NULL,

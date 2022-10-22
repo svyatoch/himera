@@ -20,17 +20,17 @@ import (
 )
 
 var systemGoAdminTables = []string{
-	"github.com/svyatoch/himera_menus",
-	"github.com/svyatoch/himera_operation_logs",
-	"github.com/svyatoch/himera_permissions",
-	"github.com/svyatoch/himera_role_menus",
-	"github.com/svyatoch/himera_sites",
-	"github.com/svyatoch/himera_roles",
-	"github.com/svyatoch/himera_sessions",
-	"github.com/svyatoch/himera_users",
-	"github.com/svyatoch/himera_role_permissions",
-	"github.com/svyatoch/himera_role_users",
-	"github.com/svyatoch/himera_user_permissions",
+	"himera_menus",
+	"himera_operation_logs",
+	"himera_permissions",
+	"himera_role_menus",
+	"himera_sites",
+	"himera_roles",
+	"himera_sessions",
+	"himera_users",
+	"himera_role_permissions",
+	"himera_role_users",
+	"himera_user_permissions",
 }
 
 func generating(cfgFile, connName string) {

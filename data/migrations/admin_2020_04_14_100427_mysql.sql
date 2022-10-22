@@ -1,4 +1,4 @@
-CREATE TABLE `github.com/svyatoch/himera_sites` (
+CREATE TABLE `himera_sites` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `key` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `value` longtext COLLATE utf8mb4_unicode_ci,

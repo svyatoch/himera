@@ -22,13 +22,13 @@ type PermissionModel struct {
 
 // Permission return a default permission model.
 func Permission() PermissionModel {
-	return PermissionModel{Base: Base{TableName: "github.com/svyatoch/himera_permissions"}}
+	return PermissionModel{Base: Base{TableName: "himera_permissions"}}
 }
 
 // PermissionWithId return a default permission model of given id.
 func PermissionWithId(id string) PermissionModel {
 	idInt, _ := strconv.Atoi(id)
-	return PermissionModel{Base: Base{TableName: "github.com/svyatoch/himera_permissions"}, Id: int64(idInt)}
+	return PermissionModel{Base: Base{TableName: "himera_permissions"}, Id: int64(idInt)}
 }
 
 func (t PermissionModel) SetConn(con db.Connection) PermissionModel {

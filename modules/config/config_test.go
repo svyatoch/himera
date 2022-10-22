@@ -189,7 +189,7 @@ func TestUpdate(t *testing.T) {
 		"app_id":                            `70rv3KwjwjXE`,
 		"asset_root_path":                   `./public/`,
 		"asset_url":                         "",
-		"auth_user_table":                   `github.com/svyatoch/himera_users`,
+		"auth_user_table":                   `himera_users`,
 		"bootstrap_file_path":               `./../datamodel/bootstrap.go`,
 		"color_scheme":                      `skin-black`,
 		"custom_403_html":                   "",

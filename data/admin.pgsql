@@ -30,10 +30,10 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- Name: github.com/svyatoch/himera_menus_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: himera_menus_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.github.com/svyatoch/himera_menus_myid_seq
+CREATE SEQUENCE public.himera_menus_myid_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -41,18 +41,18 @@ CREATE SEQUENCE public.github.com/svyatoch/himera_menus_myid_seq
     CACHE 1;
 
 
-ALTER TABLE public.github.com/svyatoch/himera_menus_myid_seq OWNER TO postgres;
+ALTER TABLE public.himera_menus_myid_seq OWNER TO postgres;
 
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
--- Name: github.com/svyatoch/himera_menus; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_menus; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_menus (
-    id integer DEFAULT nextval('public.github.com/svyatoch/himera_menus_myid_seq'::regclass) NOT NULL,
+CREATE TABLE public.himera_menus (
+    id integer DEFAULT nextval('public.himera_menus_myid_seq'::regclass) NOT NULL,
     parent_id integer DEFAULT 0 NOT NULL,
     type integer DEFAULT 0,
     "order" integer DEFAULT 0 NOT NULL,
@@ -67,13 +67,13 @@ CREATE TABLE public.github.com/svyatoch/himera_menus (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_menus OWNER TO postgres;
+ALTER TABLE public.himera_menus OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_operation_logs_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: himera_operation_logs_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.github.com/svyatoch/himera_operation_logs_myid_seq
+CREATE SEQUENCE public.himera_operation_logs_myid_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -81,14 +81,14 @@ CREATE SEQUENCE public.github.com/svyatoch/himera_operation_logs_myid_seq
     CACHE 1;
 
 
-ALTER TABLE public.github.com/svyatoch/himera_operation_logs_myid_seq OWNER TO postgres;
+ALTER TABLE public.himera_operation_logs_myid_seq OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_operation_logs; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_operation_logs; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_operation_logs (
-    id integer DEFAULT nextval('public.github.com/svyatoch/himera_operation_logs_myid_seq'::regclass) NOT NULL,
+CREATE TABLE public.himera_operation_logs (
+    id integer DEFAULT nextval('public.himera_operation_logs_myid_seq'::regclass) NOT NULL,
     user_id integer NOT NULL,
     path character varying(255) NOT NULL,
     method character varying(10) NOT NULL,
@@ -99,13 +99,13 @@ CREATE TABLE public.github.com/svyatoch/himera_operation_logs (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_operation_logs OWNER TO postgres;
+ALTER TABLE public.himera_operation_logs OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_sites_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: himera_sites_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.github.com/svyatoch/himera_sites_myid_seq
+CREATE SEQUENCE public.himera_sites_myid_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -113,14 +113,14 @@ CREATE SEQUENCE public.github.com/svyatoch/himera_sites_myid_seq
     CACHE 1;
 
 
-ALTER TABLE public.github.com/svyatoch/himera_sites_myid_seq OWNER TO postgres;
+ALTER TABLE public.himera_sites_myid_seq OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_sites; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_sites; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_sites (
-    id integer DEFAULT nextval('public.github.com/svyatoch/himera_sites_myid_seq'::regclass) NOT NULL,
+CREATE TABLE public.himera_sites (
+    id integer DEFAULT nextval('public.himera_sites_myid_seq'::regclass) NOT NULL,
     key character varying(100) NOT NULL,
     value text NOT NULL,
     type integer DEFAULT 0,
@@ -131,13 +131,13 @@ CREATE TABLE public.github.com/svyatoch/himera_sites (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_sites OWNER TO postgres;
+ALTER TABLE public.himera_sites OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_permissions_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: himera_permissions_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.github.com/svyatoch/himera_permissions_myid_seq
+CREATE SEQUENCE public.himera_permissions_myid_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -145,14 +145,14 @@ CREATE SEQUENCE public.github.com/svyatoch/himera_permissions_myid_seq
     CACHE 1;
 
 
-ALTER TABLE public.github.com/svyatoch/himera_permissions_myid_seq OWNER TO postgres;
+ALTER TABLE public.himera_permissions_myid_seq OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_permissions; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_permissions (
-    id integer DEFAULT nextval('public.github.com/svyatoch/himera_permissions_myid_seq'::regclass) NOT NULL,
+CREATE TABLE public.himera_permissions (
+    id integer DEFAULT nextval('public.himera_permissions_myid_seq'::regclass) NOT NULL,
     name character varying(50) NOT NULL,
     slug character varying(50) NOT NULL,
     http_method character varying(255),
@@ -162,13 +162,13 @@ CREATE TABLE public.github.com/svyatoch/himera_permissions (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_permissions OWNER TO postgres;
+ALTER TABLE public.himera_permissions OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_role_menus; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_role_menus; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_role_menus (
+CREATE TABLE public.himera_role_menus (
     role_id integer NOT NULL,
     menu_id integer NOT NULL,
     created_at timestamp without time zone DEFAULT now(),
@@ -176,13 +176,13 @@ CREATE TABLE public.github.com/svyatoch/himera_role_menus (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_role_menus OWNER TO postgres;
+ALTER TABLE public.himera_role_menus OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_role_permissions; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_role_permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_role_permissions (
+CREATE TABLE public.himera_role_permissions (
     role_id integer NOT NULL,
     permission_id integer NOT NULL,
     created_at timestamp without time zone DEFAULT now(),
@@ -190,13 +190,13 @@ CREATE TABLE public.github.com/svyatoch/himera_role_permissions (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_role_permissions OWNER TO postgres;
+ALTER TABLE public.himera_role_permissions OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_role_users; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_role_users; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_role_users (
+CREATE TABLE public.himera_role_users (
     role_id integer NOT NULL,
     user_id integer NOT NULL,
     created_at timestamp without time zone DEFAULT now(),
@@ -204,13 +204,13 @@ CREATE TABLE public.github.com/svyatoch/himera_role_users (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_role_users OWNER TO postgres;
+ALTER TABLE public.himera_role_users OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_roles_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: himera_roles_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.github.com/svyatoch/himera_roles_myid_seq
+CREATE SEQUENCE public.himera_roles_myid_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -218,14 +218,14 @@ CREATE SEQUENCE public.github.com/svyatoch/himera_roles_myid_seq
     CACHE 1;
 
 
-ALTER TABLE public.github.com/svyatoch/himera_roles_myid_seq OWNER TO postgres;
+ALTER TABLE public.himera_roles_myid_seq OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_roles; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_roles; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_roles (
-    id integer DEFAULT nextval('public.github.com/svyatoch/himera_roles_myid_seq'::regclass) NOT NULL,
+CREATE TABLE public.himera_roles (
+    id integer DEFAULT nextval('public.himera_roles_myid_seq'::regclass) NOT NULL,
     name character varying NOT NULL,
     slug character varying NOT NULL,
     created_at timestamp without time zone DEFAULT now(),
@@ -233,13 +233,13 @@ CREATE TABLE public.github.com/svyatoch/himera_roles (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_roles OWNER TO postgres;
+ALTER TABLE public.himera_roles OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_sessions_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: himera_sessions_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.github.com/svyatoch/himera_sessions_myid_seq
+CREATE SEQUENCE public.himera_sessions_myid_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -247,14 +247,14 @@ CREATE SEQUENCE public.github.com/svyatoch/himera_sessions_myid_seq
     CACHE 1;
 
 
-ALTER TABLE public.github.com/svyatoch/himera_sessions_myid_seq OWNER TO postgres;
+ALTER TABLE public.himera_sessions_myid_seq OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_sessions; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_sessions; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_sessions (
-    id integer DEFAULT nextval('public.github.com/svyatoch/himera_sessions_myid_seq'::regclass) NOT NULL,
+CREATE TABLE public.himera_sessions (
+    id integer DEFAULT nextval('public.himera_sessions_myid_seq'::regclass) NOT NULL,
     sid character varying(50) NOT NULL,
     "values" character varying(3000) NOT NULL,
     created_at timestamp without time zone DEFAULT now(),
@@ -262,13 +262,13 @@ CREATE TABLE public.github.com/svyatoch/himera_sessions (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_sessions OWNER TO postgres;
+ALTER TABLE public.himera_sessions OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_user_permissions; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_user_permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_user_permissions (
+CREATE TABLE public.himera_user_permissions (
     user_id integer NOT NULL,
     permission_id integer NOT NULL,
     created_at timestamp without time zone DEFAULT now(),
@@ -276,13 +276,13 @@ CREATE TABLE public.github.com/svyatoch/himera_user_permissions (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_user_permissions OWNER TO postgres;
+ALTER TABLE public.himera_user_permissions OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_users_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: himera_users_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.github.com/svyatoch/himera_users_myid_seq
+CREATE SEQUENCE public.himera_users_myid_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -290,14 +290,14 @@ CREATE SEQUENCE public.github.com/svyatoch/himera_users_myid_seq
     CACHE 1;
 
 
-ALTER TABLE public.github.com/svyatoch/himera_users_myid_seq OWNER TO postgres;
+ALTER TABLE public.himera_users_myid_seq OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_users; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_users; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_users (
-    id integer DEFAULT nextval('public.github.com/svyatoch/himera_users_myid_seq'::regclass) NOT NULL,
+CREATE TABLE public.himera_users (
+    id integer DEFAULT nextval('public.himera_users_myid_seq'::regclass) NOT NULL,
     username character varying(100) NOT NULL,
     password character varying(100) NOT NULL,
     name character varying(100) NOT NULL,
@@ -308,13 +308,13 @@ CREATE TABLE public.github.com/svyatoch/himera_users (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_users OWNER TO postgres;
+ALTER TABLE public.himera_users OWNER TO postgres;
 
 --
--- Data for Name: github.com/svyatoch/himera_menus; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_menus; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_menus (id, parent_id, type, "order", title, plugin_name, header, icon, uri, created_at, updated_at) FROM stdin;
+COPY public.himera_menus (id, parent_id, type, "order", title, plugin_name, header, icon, uri, created_at, updated_at) FROM stdin;
 1	0	1	2	Admin		\N	fa-tasks		2019-09-10 00:00:00	2019-09-10 00:00:00
 2	1	1	2	Users		\N	fa-users	/info/manager	2019-09-10 00:00:00	2019-09-10 00:00:00
 3	1	1	3	Roles		\N	fa-user	/info/roles	2019-09-10 00:00:00	2019-09-10 00:00:00
@@ -326,36 +326,36 @@ COPY public.github.com/svyatoch/himera_menus (id, parent_id, type, "order", titl
 
 
 --
--- Data for Name: github.com/svyatoch/himera_operation_logs; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_operation_logs; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_operation_logs (id, user_id, path, method, ip, input, created_at, updated_at) FROM stdin;
+COPY public.himera_operation_logs (id, user_id, path, method, ip, input, created_at, updated_at) FROM stdin;
 \.
 
 
 --
--- Data for Name: github.com/svyatoch/himera_sites; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_sites; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_sites (id, key, value, description, state, created_at, updated_at) FROM stdin;
+COPY public.himera_sites (id, key, value, description, state, created_at, updated_at) FROM stdin;
 \.
 
 
 --
--- Data for Name: github.com/svyatoch/himera_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_permissions (id, name, slug, http_method, http_path, created_at, updated_at) FROM stdin;
+COPY public.himera_permissions (id, name, slug, http_method, http_path, created_at, updated_at) FROM stdin;
 1	All permission	*		*	2019-09-10 00:00:00	2019-09-10 00:00:00
 2	Dashboard	dashboard	GET,PUT,POST,DELETE	/	2019-09-10 00:00:00	2019-09-10 00:00:00
 \.
 
 
 --
--- Data for Name: github.com/svyatoch/himera_role_menus; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_role_menus; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_role_menus (role_id, menu_id, created_at, updated_at) FROM stdin;
+COPY public.himera_role_menus (role_id, menu_id, created_at, updated_at) FROM stdin;
 1	1	2019-09-10 00:00:00	2019-09-10 00:00:00
 1	7	2019-09-10 00:00:00	2019-09-10 00:00:00
 2	7	2019-09-10 00:00:00	2019-09-10 00:00:00
@@ -363,10 +363,10 @@ COPY public.github.com/svyatoch/himera_role_menus (role_id, menu_id, created_at,
 
 
 --
--- Data for Name: github.com/svyatoch/himera_role_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_role_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_role_permissions (role_id, permission_id, created_at, updated_at) FROM stdin;
+COPY public.himera_role_permissions (role_id, permission_id, created_at, updated_at) FROM stdin;
 1	1	2019-09-10 00:00:00	2019-09-10 00:00:00
 1	2	2019-09-10 00:00:00	2019-09-10 00:00:00
 2	2	2019-09-10 00:00:00	2019-09-10 00:00:00
@@ -390,38 +390,38 @@ COPY public.github.com/svyatoch/himera_role_permissions (role_id, permission_id,
 
 
 --
--- Data for Name: github.com/svyatoch/himera_role_users; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_role_users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_role_users (role_id, user_id, created_at, updated_at) FROM stdin;
+COPY public.himera_role_users (role_id, user_id, created_at, updated_at) FROM stdin;
 1	1	2019-09-10 00:00:00	2019-09-10 00:00:00
 2	2	2019-09-10 00:00:00	2019-09-10 00:00:00
 \.
 
 
 --
--- Data for Name: github.com/svyatoch/himera_roles; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_roles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_roles (id, name, slug, created_at, updated_at) FROM stdin;
+COPY public.himera_roles (id, name, slug, created_at, updated_at) FROM stdin;
 1	Administrator	administrator	2019-09-10 00:00:00	2019-09-10 00:00:00
 2	Operator	operator	2019-09-10 00:00:00	2019-09-10 00:00:00
 \.
 
 
 --
--- Data for Name: github.com/svyatoch/himera_sessions; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_sessions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_sessions (id, sid, "values", created_at, updated_at) FROM stdin;
+COPY public.himera_sessions (id, sid, "values", created_at, updated_at) FROM stdin;
 \.
 
 
 --
--- Data for Name: github.com/svyatoch/himera_user_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_user_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_user_permissions (user_id, permission_id, created_at, updated_at) FROM stdin;
+COPY public.himera_user_permissions (user_id, permission_id, created_at, updated_at) FROM stdin;
 1	1	2019-09-10 00:00:00	2019-09-10 00:00:00
 2	2	2019-09-10 00:00:00	2019-09-10 00:00:00
 0	1	\N	\N
@@ -444,118 +444,118 @@ COPY public.github.com/svyatoch/himera_user_permissions (user_id, permission_id,
 
 
 --
--- Data for Name: github.com/svyatoch/himera_users; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_users (id, username, password, name, avatar, remember_token, created_at, updated_at) FROM stdin;
+COPY public.himera_users (id, username, password, name, avatar, remember_token, created_at, updated_at) FROM stdin;
 1	admin	$2a$10$OxWYJJGTP2gi00l2x06QuOWqw5VR47MQCJ0vNKnbMYfrutij10Hwe	admin		tlNcBVK9AvfYH7WEnwB1RKvocJu8FfRy4um3DJtwdHuJy0dwFsLOgAc0xUfh	2019-09-10 00:00:00	2019-09-10 00:00:00
 2	operator	$2a$10$rVqkOzHjN2MdlEprRflb1eGP0oZXuSrbJLOmJagFsCd81YZm0bsh.	Operator		\N	2019-09-10 00:00:00	2019-09-10 00:00:00
 \.
 
 
 --
--- Name: github.com/svyatoch/himera_menus_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: himera_menus_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.github.com/svyatoch/himera_menus_myid_seq', 7, true);
-
-
---
--- Name: github.com/svyatoch/himera_operation_logs_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.github.com/svyatoch/himera_operation_logs_myid_seq', 1, true);
+SELECT pg_catalog.setval('public.himera_menus_myid_seq', 7, true);
 
 
 --
--- Name: github.com/svyatoch/himera_permissions_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: himera_operation_logs_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.github.com/svyatoch/himera_permissions_myid_seq', 2, true);
-
-
---
--- Name: github.com/svyatoch/himera_roles_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.github.com/svyatoch/himera_roles_myid_seq', 2, true);
+SELECT pg_catalog.setval('public.himera_operation_logs_myid_seq', 1, true);
 
 
 --
--- Name: github.com/svyatoch/himera_sites_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: himera_permissions_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.github.com/svyatoch/himera_sites_myid_seq', 1, true);
-
-
---
--- Name: github.com/svyatoch/himera_sessions_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.github.com/svyatoch/himera_sessions_myid_seq', 1, true);
+SELECT pg_catalog.setval('public.himera_permissions_myid_seq', 2, true);
 
 
 --
--- Name: github.com/svyatoch/himera_users_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: himera_roles_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.github.com/svyatoch/himera_users_myid_seq', 2, true);
-
-
---
--- Name: github.com/svyatoch/himera_menus github.com/svyatoch/himera_menus_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.github.com/svyatoch/himera_menus
-    ADD CONSTRAINT github.com/svyatoch/himera_menus_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.himera_roles_myid_seq', 2, true);
 
 
 --
--- Name: github.com/svyatoch/himera_operation_logs github.com/svyatoch/himera_operation_logs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: himera_sites_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.github.com/svyatoch/himera_operation_logs
-    ADD CONSTRAINT github.com/svyatoch/himera_operation_logs_pkey PRIMARY KEY (id);
-
-
---
--- Name: github.com/svyatoch/himera_permissions github.com/svyatoch/himera_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.github.com/svyatoch/himera_permissions
-    ADD CONSTRAINT github.com/svyatoch/himera_permissions_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.himera_sites_myid_seq', 1, true);
 
 
 --
--- Name: github.com/svyatoch/himera_roles github.com/svyatoch/himera_roles_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: himera_sessions_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.github.com/svyatoch/himera_roles
-    ADD CONSTRAINT github.com/svyatoch/himera_roles_pkey PRIMARY KEY (id);
-
-
---
--- Name: github.com/svyatoch/himera_sites github.com/svyatoch/himera_sites_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.github.com/svyatoch/himera_sites
-    ADD CONSTRAINT github.com/svyatoch/himera_sites_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.himera_sessions_myid_seq', 1, true);
 
 
 --
--- Name: github.com/svyatoch/himera_sessions github.com/svyatoch/himera_sessions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: himera_users_myid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.github.com/svyatoch/himera_sessions
-    ADD CONSTRAINT github.com/svyatoch/himera_sessions_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.himera_users_myid_seq', 2, true);
 
 
 --
--- Name: github.com/svyatoch/himera_users github.com/svyatoch/himera_users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: himera_menus himera_menus_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.github.com/svyatoch/himera_users
-    ADD CONSTRAINT github.com/svyatoch/himera_users_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.himera_menus
+    ADD CONSTRAINT himera_menus_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: himera_operation_logs himera_operation_logs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.himera_operation_logs
+    ADD CONSTRAINT himera_operation_logs_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: himera_permissions himera_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.himera_permissions
+    ADD CONSTRAINT himera_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: himera_roles himera_roles_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.himera_roles
+    ADD CONSTRAINT himera_roles_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: himera_sites himera_sites_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.himera_sites
+    ADD CONSTRAINT himera_sites_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: himera_sessions himera_sessions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.himera_sessions
+    ADD CONSTRAINT himera_sessions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: himera_users himera_users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.himera_users
+    ADD CONSTRAINT himera_users_pkey PRIMARY KEY (id);
 
 
 --

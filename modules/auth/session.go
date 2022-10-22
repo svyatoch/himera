@@ -24,7 +24,7 @@ const DefaultCookieKey = "go_admin_session"
 func newDBDriver(conn db.Connection) *DBDriver {
 	return &DBDriver{
 		conn:      conn,
-		tableName: "github.com/svyatoch/himera_sessions",
+		tableName: "himera_sessions",
 	}
 }
 

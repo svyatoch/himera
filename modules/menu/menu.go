@@ -138,7 +138,7 @@ type NewMenuData struct {
 
 func NewMenu(conn db.Connection, data NewMenuData) (int64, error) {
 	maxOrder := data.Order
-	checkOrder, _ := db.WithDriver(conn).Table("github.com/svyatoch/himera_menus").
+	checkOrder, _ := db.WithDriver(conn).Table("himera_menus").
 		Where("plugin_name", "=", data.PluginName).
 		OrderBy("order", "desc").
 		First()
@@ -147,7 +147,7 @@ func NewMenu(conn db.Connection, data NewMenuData) (int64, error) {
 		maxOrder = checkOrder["order"].(int64)
 	}
 
-	id, err := db.WithDriver(conn).Table("github.com/svyatoch/himera_menus").
+	id, err := db.WithDriver(conn).Table("himera_menus").
 		Insert(dialect.H{
 			"parent_id":   data.ParentId,
 			"type":        data.Type,
@@ -181,7 +181,7 @@ func GetGlobalMenu(user models.UserModel, conn db.Connection, lang string, plugi
 	user.WithRoles().WithMenus()
 
 	if user.IsSuperAdmin() {
-		menus, _ = db.WithDriver(conn).Table("github.com/svyatoch/himera_menus").
+		menus, _ = db.WithDriver(conn).Table("himera_menus").
 			Where("id", ">", 0).
 			Where("plugin_name", "=", plugName).
 			OrderBy("order", "asc").
@@ -193,7 +193,7 @@ func GetGlobalMenu(user models.UserModel, conn db.Connection, lang string, plugi
 			ids = append(ids, user.MenuIds[i])
 		}
 
-		menus, _ = db.WithDriver(conn).Table("github.com/svyatoch/himera_menus").
+		menus, _ = db.WithDriver(conn).Table("himera_menus").
 			WhereIn("id", ids).
 			Where("plugin_name", "=", plugName).
 			OrderBy("order", "asc").

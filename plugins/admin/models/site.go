@@ -32,7 +32,7 @@ const (
 
 // Site return a default role model.
 func Site() SiteModel {
-	return SiteModel{Base: Base{TableName: "github.com/svyatoch/himera_sites"}}
+	return SiteModel{Base: Base{TableName: "himera_sites"}}
 }
 
 func (t SiteModel) SetConn(con db.Connection) SiteModel {

@@ -22,13 +22,13 @@ type RoleModel struct {
 
 // Role return a default role model.
 func Role() RoleModel {
-	return RoleModel{Base: Base{TableName: "github.com/svyatoch/himera_roles"}}
+	return RoleModel{Base: Base{TableName: "himera_roles"}}
 }
 
 // RoleWithId return a default role model of given id.
 func RoleWithId(id string) RoleModel {
 	idInt, _ := strconv.Atoi(id)
-	return RoleModel{Base: Base{TableName: "github.com/svyatoch/himera_roles"}, Id: int64(idInt)}
+	return RoleModel{Base: Base{TableName: "himera_roles"}, Id: int64(idInt)}
 }
 
 func (t RoleModel) SetConn(con db.Connection) RoleModel {
@@ -89,7 +89,7 @@ func (t RoleModel) Update(name, slug string) (int64, error) {
 
 // CheckPermission check the permission of role.
 func (t RoleModel) CheckPermission(permissionId string) bool {
-	checkPermission, _ := t.Table("github.com/svyatoch/himera_role_permissions").
+	checkPermission, _ := t.Table("himera_role_permissions").
 		Where("permission_id", "=", permissionId).
 		Where("role_id", "=", t.Id).
 		First()
@@ -98,7 +98,7 @@ func (t RoleModel) CheckPermission(permissionId string) bool {
 
 // DeletePermissions delete all the permissions of role.
 func (t RoleModel) DeletePermissions() error {
-	return t.WithTx(t.Tx).Table("github.com/svyatoch/himera_role_permissions").
+	return t.WithTx(t.Tx).Table("himera_role_permissions").
 		Where("role_id", "=", t.Id).
 		Delete()
 }
@@ -107,7 +107,7 @@ func (t RoleModel) DeletePermissions() error {
 func (t RoleModel) AddPermission(permissionId string) (int64, error) {
 	if permissionId != "" {
 		if !t.CheckPermission(permissionId) {
-			return t.WithTx(t.Tx).Table("github.com/svyatoch/himera_role_permissions").
+			return t.WithTx(t.Tx).Table("himera_role_permissions").
 				Insert(dialect.H{
 					"permission_id": permissionId,
 					"role_id":       t.Id,

@@ -11,18 +11,18 @@ import (
 
 func testSQLWhereIn(t *testing.T, conn Connection) {
 
-	item, _ := WithDriver(conn).Table("github.com/svyatoch/himera_users").WhereIn("id", []interface{}{"1", "2"}).First()
+	item, _ := WithDriver(conn).Table("himera_users").WhereIn("id", []interface{}{"1", "2"}).First()
 	assert.Equal(t, len(item), 2)
 
 	_, _ = WithDriver(conn).WithTransaction(func(tx *sql.Tx) (e error, i map[string]interface{}) {
-		item, _ := WithDriver(conn).WithTx(tx).Table("github.com/svyatoch/himera_users").WhereIn("id", []interface{}{"1", "2"}).All()
+		item, _ := WithDriver(conn).WithTx(tx).Table("himera_users").WhereIn("id", []interface{}{"1", "2"}).All()
 		assert.Equal(t, len(item), 2)
 		return nil, nil
 	})
 }
 
 func testSQLCount(t *testing.T, conn Connection) {
-	count, _ := WithDriver(conn).Table("github.com/svyatoch/himera_users").Count()
+	count, _ := WithDriver(conn).Table("himera_users").Count()
 	assert.Equal(t, count, int64(2))
 }
 

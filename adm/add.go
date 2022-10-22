@@ -77,7 +77,7 @@ func addUser(cfgFile string) {
 		userPassword = promptWithDefault("user password", "")
 	}
 
-	checkExist, err := db.WithDriver(conn).Table("github.com/svyatoch/himera_users").
+	checkExist, err := db.WithDriver(conn).Table("himera_users").
 		Where("name", "=", name).
 		First()
 
@@ -89,7 +89,7 @@ func addUser(cfgFile string) {
 		panic(newError("user record exists"))
 	}
 
-	_, err = db.WithDriver(conn).Table("github.com/svyatoch/himera_users").
+	_, err = db.WithDriver(conn).Table("himera_users").
 		Insert(dialect.H{
 			"name":     name,
 			"username": nickname,
@@ -196,7 +196,7 @@ func insertPermissionOfTable(conn db.Connection, table string) {
 }
 
 func insertPermissionInfoDB(conn db.Connection, name, slug, httpMethod, httpPath string) {
-	checkExist, err := db.WithDriver(conn).Table("github.com/svyatoch/himera_permissions").
+	checkExist, err := db.WithDriver(conn).Table("himera_permissions").
 		Where("slug", "=", slug).
 		First()
 
@@ -208,7 +208,7 @@ func insertPermissionInfoDB(conn db.Connection, name, slug, httpMethod, httpPath
 		return
 	}
 
-	_, err = db.WithDriver(conn).Table("github.com/svyatoch/himera_permissions").
+	_, err = db.WithDriver(conn).Table("himera_permissions").
 		Insert(dialect.H{
 			"name":        name,
 			"slug":        slug,

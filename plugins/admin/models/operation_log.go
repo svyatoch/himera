@@ -21,7 +21,7 @@ type OperationLogModel struct {
 
 // OperationLog return a default operation log model.
 func OperationLog() OperationLogModel {
-	return OperationLogModel{Base: Base{TableName: "github.com/svyatoch/himera_operation_logs"}}
+	return OperationLogModel{Base: Base{TableName: "himera_operation_logs"}}
 }
 
 // Find return a default operation log model of given id.

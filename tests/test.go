@@ -38,37 +38,37 @@ func Cleaner(config config.DatabaseList) {
 	}
 
 	var allTables = [...]string{
-		"github.com/svyatoch/himera_users",
-		"github.com/svyatoch/himera_user_permissions",
-		"github.com/svyatoch/himera_sessions",
-		"github.com/svyatoch/himera_roles",
-		"github.com/svyatoch/himera_role_users",
-		"github.com/svyatoch/himera_role_permissions",
-		"github.com/svyatoch/himera_role_menus",
-		"github.com/svyatoch/himera_permissions",
-		"github.com/svyatoch/himera_operation_logs",
-		"github.com/svyatoch/himera_menus",
+		"himera_users",
+		"himera_user_permissions",
+		"himera_sessions",
+		"himera_roles",
+		"himera_role_users",
+		"himera_role_permissions",
+		"himera_role_menus",
+		"himera_permissions",
+		"himera_operation_logs",
+		"himera_menus",
 	}
 	var autoIncrementTable = [...]string{
-		"github.com/svyatoch/himera_menus",
-		"github.com/svyatoch/himera_permissions",
-		"github.com/svyatoch/himera_roles",
-		"github.com/svyatoch/himera_users",
+		"himera_menus",
+		"himera_permissions",
+		"himera_roles",
+		"himera_users",
 	}
 	var insertData = map[string][]dialect.H{
-		"github.com/svyatoch/himera_users": {
+		"himera_users": {
 			{"username": "admin", "name": "admin", "password": "$2a$10$TEDU/aUxLkr2wCxGxI62/.yOtzrzfv426DLLdyha9H2GpWRggB0di", "remember_token": "tlNcBVK9AvfYH7WEnwB1RKvocJu8FfRy4um3DJtwdHuJy0dwFsLOgAc0xUfh"},
 			{"username": "operator", "name": "operator", "password": "$2a$10$rVqkOzHjN2MdlEprRflb1eGP0oZXuSrbJLOmJagFsCd81YZm0bsh.", "remember_token": "tlNcBVK9AvfYH7WEnwB1RKvocJu8FfRy4um3DJtwdHuJy0dwFsLOgAc0xUfh"},
 		},
-		"github.com/svyatoch/himera_roles": {
+		"himera_roles": {
 			{"name": "Administrator", "slug": "administrator"},
 			{"name": "Operator", "slug": "operator"},
 		},
-		"github.com/svyatoch/himera_permissions": {
+		"himera_permissions": {
 			{"name": "All permission", "slug": "*", "http_method": "", "http_path": "*"},
 			{"name": "Dashboard", "slug": "dashboard", "http_method": "GET,PUT,POST,DELETE", "http_path": "/"},
 		},
-		"github.com/svyatoch/himera_menus": {
+		"himera_menus": {
 			{"parent_id": 0, "type": 1, "order": 2, "title": "Admin", "icon": "fa-tasks", "uri": ""},
 			{"parent_id": 1, "type": 1, "order": 2, "title": "Users", "icon": "fa-users", "uri": "/info/manager"},
 			{"parent_id": 0, "type": 1, "order": 3, "title": "test2 menu", "icon": "fa-angellist", "uri": "/example/test"},
@@ -78,20 +78,20 @@ func Cleaner(config config.DatabaseList) {
 			{"parent_id": 0, "type": 1, "order": 1, "title": "Dashboard", "icon": "fa-bar-chart", "uri": "/"},
 			{"parent_id": 0, "type": 1, "order": 7, "title": "User", "icon": "fa-users", "uri": "/info/user"},
 		},
-		"github.com/svyatoch/himera_role_users": {
+		"himera_role_users": {
 			{"user_id": 1, "role_id": 1},
 			{"user_id": 2, "role_id": 2},
 		},
-		"github.com/svyatoch/himera_user_permissions": {
+		"himera_user_permissions": {
 			{"user_id": 1, "permission_id": 1},
 			{"user_id": 2, "permission_id": 2},
 		},
-		"github.com/svyatoch/himera_role_permissions": {
+		"himera_role_permissions": {
 			{"role_id": 1, "permission_id": 1},
 			{"role_id": 1, "permission_id": 2},
 			{"role_id": 2, "permission_id": 2},
 		},
-		"github.com/svyatoch/himera_role_menus": {
+		"himera_role_menus": {
 			{"role_id": 1, "menu_id": 1},
 			{"role_id": 1, "menu_id": 7},
 			{"role_id": 2, "menu_id": 7},

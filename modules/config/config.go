@@ -895,7 +895,7 @@ func SetDefault(cfg *Config) *Config {
 	cfg.Theme = utils.SetDefault(cfg.Theme, "", "adminlte")
 	cfg.IndexUrl = utils.SetDefault(cfg.IndexUrl, "", "/info/manager")
 	cfg.LoginUrl = utils.SetDefault(cfg.LoginUrl, "", "/login")
-	cfg.AuthUserTable = utils.SetDefault(cfg.AuthUserTable, "", "github.com/svyatoch/himera_users")
+	cfg.AuthUserTable = utils.SetDefault(cfg.AuthUserTable, "", "himera_users")
 	if cfg.Theme == "adminlte" {
 		cfg.ColorScheme = utils.SetDefault(cfg.ColorScheme, "", "skin-black")
 	}

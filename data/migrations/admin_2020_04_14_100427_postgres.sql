@@ -20,24 +20,24 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: github.com/svyatoch/himera_sites_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: himera_sites_myid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.github.com/svyatoch/himera_sites_myid_seq
+CREATE SEQUENCE public.himera_sites_myid_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     MAXVALUE 99999999
     CACHE 1;
 
-ALTER TABLE public.github.com/svyatoch/himera_sites_myid_seq OWNER TO postgres;
+ALTER TABLE public.himera_sites_myid_seq OWNER TO postgres;
 
 --
--- Name: github.com/svyatoch/himera_sites; Type: TABLE; Schema: public; Owner: postgres
+-- Name: himera_sites; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.github.com/svyatoch/himera_sites (
-    id integer DEFAULT nextval('public.github.com/svyatoch/himera_sites_myid_seq'::regclass) NOT NULL,
+CREATE TABLE public.himera_sites (
+    id integer DEFAULT nextval('public.himera_sites_myid_seq'::regclass) NOT NULL,
     key character varying(100) NOT NULL,
     value text NOT NULL,
     type integer DEFAULT 0,
@@ -48,22 +48,22 @@ CREATE TABLE public.github.com/svyatoch/himera_sites (
 );
 
 
-ALTER TABLE public.github.com/svyatoch/himera_sites OWNER TO postgres;
+ALTER TABLE public.himera_sites OWNER TO postgres;
 
 --
--- Data for Name: github.com/svyatoch/himera_sites; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: himera_sites; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.github.com/svyatoch/himera_sites (id, key, value, type, description, state, created_at, updated_at) FROM stdin;
+COPY public.himera_sites (id, key, value, type, description, state, created_at, updated_at) FROM stdin;
 \.
 
 
 --
--- Name: github.com/svyatoch/himera_sites github.com/svyatoch/himera_sites_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: himera_sites himera_sites_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.github.com/svyatoch/himera_sites
-    ADD CONSTRAINT github.com/svyatoch/himera_sites_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.himera_sites
+    ADD CONSTRAINT himera_sites_pkey PRIMARY KEY (id);
 
 
 --
